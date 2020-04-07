@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:loan/signup.dart';
 import 'package:loan/home.dart';
 
-
 class SignIn extends StatefulWidget {
   @override
   _SignInState createState() => _SignInState();
@@ -12,9 +11,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   bool passwordText = true;
 
-  changeView() {
-    passwordText = !passwordText;
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +19,25 @@ class _SignInState extends State<SignIn> {
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 2, 10, 20),
+          padding: const EdgeInsets.fromLTRB(5, 10, 5, 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
                 'Protected by the rights from the ',
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 11,
                   fontFamily: 'Gilroy',
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                   color: Color.fromRGBO(153, 153, 153, 1),
                 ),
               ),
               Text(
                 'Aculoan Privacy Policy',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 12,
                   fontFamily: 'Gilroy',
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w600,
                   color: Color.fromRGBO(57, 24, 79, 1),
                 ),
               ),
@@ -154,9 +151,8 @@ class _SignInState extends State<SignIn> {
                             ),
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
-                              suffixIcon: IconButton(
-                                icon: Icon(Icons.visibility_off),
-
+                              suffixIcon: Icon(
+                                Icons.visibility_off,
                               ),
                               labelText: 'Password',
                               labelStyle: TextStyle(
@@ -200,7 +196,7 @@ class _SignInState extends State<SignIn> {
                               style: TextStyle(
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 16.0,
+                                  fontSize: 14.0,
                                   color: Color.fromRGBO(243, 167, 128, 1)),
                             )
                           ],

@@ -291,301 +291,305 @@ class _NationalityState extends State<Nationality> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 2, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Protected by the rights from the ',
-                style: TextStyle(
-                  fontSize: 13,
-                  fontFamily: 'Gilroy',
-                  fontWeight: FontWeight.w600,
-                  color: Color.fromRGBO(153, 153, 153, 1),
-                ),
-              ),
-              Text(
-                'Aculoan Privacy Policy',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: 'Gilroy',
-                  fontWeight: FontWeight.w800,
-                  color: Color.fromRGBO(57, 24, 79, 1),
-                ),
-              ),
-            ],
-          ),
-        ),
-        elevation: 0,
-      ),
       body: Container(
         margin: MediaQuery.of(context).padding,
         color: Colors.white,
         height: MediaQuery.of(context).size.height,
-        child: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Row(
+              SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    IconButton(
-                      icon: Icon(
-                        Icons.arrow_back,
-                        color: Color.fromRGBO(57, 24, 79, 1),
-                      ),
-                      onPressed: () {
+                    GestureDetector(
+                      onTap: () {
                         Navigator.pop(context);
                       },
+                      child: Row(
+                        children: <Widget>[
+                          IconButton(
+                            icon: Icon(
+                              Icons.arrow_back,
+                              color: Color.fromRGBO(57, 24, 79, 1),
+                            ),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                          Text(
+                            'Back',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Gilroy',
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromRGBO(57, 24, 79, 1),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    Text(
-                      'Back',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
-                        color: Color.fromRGBO(57, 24, 79, 1),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(17, 17, 17, 5),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
+                              child: Row(
+                                children: <Widget>[
+                                  Column(
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Container(
+                                            width: 11,
+                                            height: 11,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(11),
+                                              ),
+                                              border: Border(
+                                                top: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                                left: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                                right: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                                bottom: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                              ),
+                                              color: Color.fromRGBO(57, 24, 79, 1)
+                                            ),
+                                          ),
+                                          Container(
+                                            width: 11,
+                                            height: 11,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.only(
+                                                topRight: Radius.circular(11),
+                                              ),
+                                              border: Border(
+                                                top: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                                left: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                                right: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                                bottom: BorderSide(
+                                                  style: BorderStyle.solid,
+                                                  width: 1,
+                                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                                ),
+                                              ),
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Container(
+                                        width: 22,
+                                        height: 11,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(13),
+                                            bottomRight: Radius.circular(13),
+                                          ),
+                                          color: Color.fromRGBO(57, 24, 79, 1),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    ' Nationality & Residential Details',
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      color: Color.fromRGBO(0, 0, 0, 1),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 60,
+                                child: DropdownButtonFormField(
+                                  value: selectedNationality,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      selectedNationality = newValue;
+                                    });
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Nationality',
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 16.0,
+                                      color: Color.fromRGBO(57, 24, 79, 1),
+                                    ),
+                                  ),
+                                  items: nationality.map((nationality) {
+                                    return DropdownMenuItem(
+                                      child: new Text(nationality),
+                                      value: nationality,
+                                    );
+                                  }).toList(),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 60,
+                                child: DropdownButtonFormField(
+                                  value: selectedState,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      selectedState = newValue;
+                                    });
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Nationality',
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 16.0,
+                                      color: Color.fromRGBO(57, 24, 79, 1),
+                                    ),
+                                  ),
+                                  items: state.map((state) {
+                                    return DropdownMenuItem(
+                                      child: new Text(state),
+                                      value: state,
+                                    );
+                                  }).toList(),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 60,
+                                child: DropdownButtonFormField(
+                                  value: selectedLga,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      selectedLga = newValue;
+                                    });
+                                  },
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Nationality',
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 16.0,
+                                      color: Color.fromRGBO(57, 24, 79, 1),
+                                    ),
+                                  ),
+                                  items: lga.map((lga) {
+                                    return DropdownMenuItem(
+                                      child: new Text(lga),
+                                      value: lga,
+                                    );
+                                  }).toList(),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 5, 0, 7),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height: 56,
+                                child: RaisedButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Bank(),
+                                      ),
+                                    );
+                                  },
+                                  color: Color.fromRGBO(57, 24, 79, 1),
+                                  child: Center(
+                                    child: Text(
+                                      "CONTINUE",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontFamily: 'Gilroy',
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(17, 17, 17, 5),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
-                        child: Row(
-                          children: <Widget>[
-                            Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Container(
-                                      width: 11,
-                                      height: 11,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(11),
-                                        ),
-                                        border: Border(
-                                          top: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                          left: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                          right: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                          bottom: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                        ),
-                                        color: Color.fromRGBO(57, 24, 79, 1)
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 11,
-                                      height: 11,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.only(
-                                          topRight: Radius.circular(11),
-                                        ),
-                                        border: Border(
-                                          top: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                          left: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                          right: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                          bottom: BorderSide(
-                                            style: BorderStyle.solid,
-                                            width: 1,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
-                                          ),
-                                        ),
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  width: 22,
-                                  height: 11,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(13),
-                                      bottomRight: Radius.circular(13),
-                                    ),
-                                    color: Color.fromRGBO(57, 24, 79, 1),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              ' Nationality & Residential Details',
-                              style: TextStyle(
-                                fontSize: 19,
-                                fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(0, 0, 0, 1),
-                              ),
-                            ),
-                          ],
-                        ),
+                padding: const EdgeInsets.fromLTRB(5, 10, 5, 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Protected by the rights from the ',
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w500,
+                        color: Color.fromRGBO(153, 153, 153, 1),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 60,
-                          child: DropdownButtonFormField(
-                            value: selectedNationality,
-                            onChanged: (newValue) {
-                              setState(() {
-                                selectedNationality = newValue;
-                              });
-                            },
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Nationality',
-                              labelStyle: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.0,
-                                color: Color.fromRGBO(57, 24, 79, 1),
-                              ),
-                            ),
-                            items: nationality.map((nationality) {
-                              return DropdownMenuItem(
-                                child: new Text(nationality),
-                                value: nationality,
-                              );
-                            }).toList(),
-                          ),
-                        ),
+                    ),
+                    Text(
+                      'Aculoan Privacy Policy',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontFamily: 'Gilroy',
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromRGBO(57, 24, 79, 1),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 60,
-                          child: DropdownButtonFormField(
-                            value: selectedState,
-                            onChanged: (newValue) {
-                              setState(() {
-                                selectedState = newValue;
-                              });
-                            },
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Nationality',
-                              labelStyle: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.0,
-                                color: Color.fromRGBO(57, 24, 79, 1),
-                              ),
-                            ),
-                            items: state.map((state) {
-                              return DropdownMenuItem(
-                                child: new Text(state),
-                                value: state,
-                              );
-                            }).toList(),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width,
-                          height: 60,
-                          child: DropdownButtonFormField(
-                            value: selectedLga,
-                            onChanged: (newValue) {
-                              setState(() {
-                                selectedLga = newValue;
-                              });
-                            },
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Nationality',
-                              labelStyle: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.0,
-                                color: Color.fromRGBO(57, 24, 79, 1),
-                              ),
-                            ),
-                            items: lga.map((lga) {
-                              return DropdownMenuItem(
-                                child: new Text(lga),
-                                value: lga,
-                              );
-                            }).toList(),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 5, 0, 7),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          height: 56,
-                          child: RaisedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Bank(),
-                                ),
-                              );
-                            },
-                            color: Color.fromRGBO(57, 24, 79, 1),
-                            child: Center(
-                              child: Text(
-                                "CONTINUE",
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Gilroy',
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],

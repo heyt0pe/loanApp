@@ -105,7 +105,7 @@ class _BankState extends State<Bank> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(128, 128, 128, 1),
                             ),
                             decoration: const InputDecoration(
@@ -128,7 +128,7 @@ class _BankState extends State<Bank> {
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Gilroy',
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             color: Color.fromRGBO(153, 153, 153, 1),
                           ),
                         ),
@@ -140,7 +140,7 @@ class _BankState extends State<Bank> {
                           style: TextStyle(
                             fontSize: 19,
                             fontFamily: 'Gilroy',
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             color: Color.fromRGBO(0, 0, 0, 1),
                           ),
                         ),
@@ -155,7 +155,7 @@ class _BankState extends State<Bank> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(128, 128, 128, 1),
                             ),
                             decoration: const InputDecoration(
@@ -181,7 +181,7 @@ class _BankState extends State<Bank> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(128, 128, 128, 1),
                             ),
                             decoration: const InputDecoration(
@@ -229,7 +229,7 @@ class _BankState extends State<Bank> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontFamily: 'Gilroy',
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
                                         color: Color.fromRGBO(128, 128, 128, 1),
                                       ),
                                       decoration: const InputDecoration(
@@ -263,7 +263,7 @@ class _BankState extends State<Bank> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontFamily: 'Gilroy',
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
                                         color: Color.fromRGBO(128, 128, 128, 1),
                                       ),
                                       decoration: const InputDecoration(
@@ -287,7 +287,7 @@ class _BankState extends State<Bank> {
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Gilroy',
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             color: Color.fromRGBO(153, 153, 153, 1),
                           ),
                         ),
@@ -322,25 +322,25 @@ class _BankState extends State<Bank> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 15, 10, 20),
+                        padding: const EdgeInsets.fromLTRB(5, 20, 5, 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
                               'Protected by the rights from the ',
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 11,
                                 fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 color: Color.fromRGBO(153, 153, 153, 1),
                               ),
                             ),
                             Text(
                               'Aculoan Privacy Policy',
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: 12,
                                 fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(57, 24, 79, 1),
                               ),
                             ),

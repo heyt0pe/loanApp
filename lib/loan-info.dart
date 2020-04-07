@@ -50,6 +50,7 @@ class Loan extends StatefulWidget {
 
 class _LoanState extends State<Loan> {
   final String title;
+  bool copied = false;
 
   List<String> account = [
     'Debit',
@@ -66,419 +67,466 @@ class _LoanState extends State<Loan> {
       context: context,
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
-        return Material(
-          type: MaterialType.transparency,
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 60, 0, 20),
-                  child: Container(
-                    color: Colors.white,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    constraints: BoxConstraints(
-                      minWidth: MediaQuery.of(context).size.width * 0.9,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Align(
-                            alignment: Alignment.topRight,
-                            child: GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Icon(
-                                Icons.close,
-                                color: Color.fromRGBO(230, 78, 0, 1),
-                                size: 30,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                            child: Transform.translate(
-                              offset: Offset(0, -10),
-                              child: Text(
-                                'Pay For Loan',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 19,
-                                  fontFamily: 'Gilroy',
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                            child: Container(
-                              width: (MediaQuery.of(context).size.width * 0.9) -
-                                  40,
-                              child: Separator(
-                                color: Color.fromRGBO(200, 200, 200, 1),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(3, 10, 0, 10),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                'Pay with Card',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Gilroy',
-                                  fontWeight: FontWeight.w600,
-                                  color: Color.fromRGBO(153, 153, 153, 1),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Stack(
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return Material(
+              type: MaterialType.transparency,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 60, 0, 20),
+                      child: Container(
+                        color: Colors.white,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        constraints: BoxConstraints(
+                          minWidth: MediaQuery.of(context).size.width * 0.9,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.87,
-                                height: 200,
-                                child: Card(
-                                  elevation: 5,
-                                  color: Color.fromRGBO(57, 24, 79, 1),
+                              Align(
+                                alignment: Alignment.topRight,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: Icon(
+                                    Icons.close,
+                                    color: Color.fromRGBO(230, 78, 0, 1),
+                                    size: 30,
+                                  ),
                                 ),
                               ),
-                              Container(
-                                height: 200,
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(0, 10, 0, 10),
                                 child: Transform.translate(
-                                  offset: Offset(25, -3.2),
-                                  child: Align(
-                                    alignment: Alignment.bottomLeft,
+                                  offset: Offset(0, -10),
+                                  child: Text(
+                                    'Pay For Loan',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 19,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                child: Container(
+                                  width: (MediaQuery.of(context).size.width *
+                                          0.9) -
+                                      40,
+                                  child: Separator(
+                                    color: Color.fromRGBO(200, 200, 200, 1),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(3, 10, 0, 10),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Pay with Card',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      color: Color.fromRGBO(153, 153, 153, 1),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Stack(
+                                children: <Widget>[
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.87,
+                                    height: 200,
+                                    child: Card(
+                                      elevation: 5,
+                                      color: Color.fromRGBO(57, 24, 79, 1),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 200,
+                                    child: Transform.translate(
+                                      offset: Offset(25, -3.2),
+                                      child: Align(
+                                        alignment: Alignment.bottomLeft,
+                                        child: Container(
+                                          height: 55,
+                                          width: 34,
+                                          decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: Color.fromRGBO(
+                                                  96, 67, 116, 1),
+                                              width: 3,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.87,
+                                    height: 200,
+                                    child: Card(
+                                      color: Colors.transparent,
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            15, 10, 15, 10),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      0, 10, 0, 10),
+                                              child: Image.asset(
+                                                'assets/images/mastercard.png',
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      0, 10, 0, 10),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  Text(
+                                                    'Card Number',
+                                                    style: TextStyle(
+                                                      fontSize: 12,
+                                                      fontFamily: 'Gilroy',
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      color: Color.fromRGBO(
+                                                          218, 218, 218, 1),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(0, 5, 0, 5),
+                                                    child: Text(
+                                                      '4084 0840 8408 4081',
+                                                      style: TextStyle(
+                                                        letterSpacing: 3,
+                                                        fontSize: 17,
+                                                        fontFamily: 'Gilroy',
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        color: Color.fromRGBO(
+                                                            255, 255, 255, 1),
+                                                      ),
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.fromLTRB(
+                                                      0, 10, 0, 10),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: <Widget>[
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        'Exp. Date',
+                                                        style: TextStyle(
+                                                          fontSize: 12,
+                                                          fontFamily: 'Gilroy',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          color: Color.fromRGBO(
+                                                              218, 218, 218, 1),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .fromLTRB(
+                                                                0, 5, 0, 5),
+                                                        child: Text(
+                                                          '05 / 23',
+                                                          style: TextStyle(
+                                                            fontSize: 17,
+                                                            fontFamily:
+                                                                'Gilroy',
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            color:
+                                                                Color.fromRGBO(
+                                                                    255,
+                                                                    255,
+                                                                    255,
+                                                                    1),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                  Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        'Card Holder Name',
+                                                        style: TextStyle(
+                                                          fontSize: 12,
+                                                          fontFamily: 'Gilroy',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          color: Color.fromRGBO(
+                                                              218, 218, 218, 1),
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .fromLTRB(
+                                                                0, 5, 0, 5),
+                                                        child: Text(
+                                                          'Precious I Ogar',
+                                                          style: TextStyle(
+                                                            fontSize: 17,
+                                                            fontFamily:
+                                                                'Gilroy',
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            color:
+                                                                Color.fromRGBO(
+                                                                    255,
+                                                                    255,
+                                                                    255,
+                                                                    1),
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: Alignment.topRight,
                                     child: Container(
-                                      height: 55,
-                                      width: 34,
+                                      width: 30,
+                                      height: 30,
                                       decoration: BoxDecoration(
-                                        border: Border.all(
-                                          color: Color.fromRGBO(96, 67, 116, 1),
-                                          width: 3,
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(15),
+                                        ),
+                                        color: Color.fromRGBO(203, 238, 234, 1),
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.edit,
+                                          color: Color.fromRGBO(230, 78, 0, 1),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(0, 15, 0, 15),
+                                child: Text(
+                                  'Add new Card',
+                                  style: TextStyle(
+                                    color: Color.fromRGBO(230, 78, 0, 1),
+                                    fontSize: 15,
+                                    fontFamily: 'Gilroy',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                                child: Container(
+                                  width: (MediaQuery.of(context).size.width *
+                                          0.9) -
+                                      40,
+                                  child: Separator(
+                                    color: Color.fromRGBO(200, 200, 200, 1),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(3, 10, 0, 10),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Pay with Bank',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      color: Color.fromRGBO(153, 153, 153, 1),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(3, 10, 0, 10),
+                                child: Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'Use the bank account provided below to pay for your loan.',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      color: Color.fromRGBO(69, 69, 69, 1),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(0, 5, 0, 75),
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 120,
+                                  child: Card(
+                                    elevation: 0,
+                                    color: Color.fromRGBO(250, 242, 255, 1),
+                                    child: Center(
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            15, 1, 15, 1),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: <Widget>[
+                                            Container(
+                                              height: 70,
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: <Widget>[
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsets.fromLTRB(
+                                                            0, 0, 0, 10),
+                                                    child: Text(
+                                                      'Account Details',
+                                                      style: TextStyle(
+                                                        fontSize: 11.5,
+                                                        fontFamily: 'Gilroy',
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        color: Color.fromRGBO(
+                                                            94, 94, 94, 1),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(0, 2, 0, 1),
+                                                    child: Text(
+                                                      'PROVIDUS BANK',
+                                                      style: TextStyle(
+                                                        fontSize: 13,
+                                                        fontFamily: 'Gilroy',
+                                                        fontWeight:
+                                                            FontWeight.w900,
+                                                        color: Color.fromRGBO(
+                                                            69, 69, 69, 1),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(0, 2, 0, 0),
+                                                    child: Text(
+                                                      '0254507664',
+                                                      style: TextStyle(
+                                                        fontSize: 15,
+                                                        letterSpacing: 2,
+                                                        fontFamily: 'Gilroy',
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        color: Color.fromRGBO(
+                                                            69, 69, 69, 1),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            GestureDetector(
+                                              onTap: () {
+                                                Clipboard.setData(
+                                                  ClipboardData(
+                                                    text: '0254507664',
+                                                  ),
+                                                );
+                                                setState(() {
+                                                  copied = true;
+                                                });
+                                              },
+                                              child: Text(
+                                                (copied)
+                                                    ? 'Copied'
+                                                    : 'Copy Acc. Number',
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontFamily: 'Gilroy',
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Color.fromRGBO(
+                                                      230, 78, 0, 1),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.87,
-                                height: 200,
-                                child: Card(
-                                  color: Colors.transparent,
-                                  child: Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        15, 10, 15, 10),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              0, 10, 0, 10),
-                                          child: Image.asset(
-                                            'assets/images/mastercard.png',
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              0, 10, 0, 10),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: <Widget>[
-                                              Text(
-                                                'Card Number',
-                                                style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontFamily: 'Gilroy',
-                                                  fontWeight: FontWeight.w600,
-                                                  color: Color.fromRGBO(
-                                                      218, 218, 218, 1),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.fromLTRB(
-                                                        0, 5, 0, 5),
-                                                child: Text(
-                                                  '4084 0840 8408 4081',
-                                                  style: TextStyle(
-                                                    letterSpacing: 3,
-                                                    fontSize: 17,
-                                                    fontFamily: 'Gilroy',
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Color.fromRGBO(
-                                                        255, 255, 255, 1),
-                                                  ),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              0, 10, 0, 10),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: <Widget>[
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: <Widget>[
-                                                  Text(
-                                                    'Exp. Date',
-                                                    style: TextStyle(
-                                                      fontSize: 12,
-                                                      fontFamily: 'Gilroy',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      color: Color.fromRGBO(
-                                                          218, 218, 218, 1),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding: const EdgeInsets
-                                                        .fromLTRB(0, 5, 0, 5),
-                                                    child: Text(
-                                                      '05 / 23',
-                                                      style: TextStyle(
-                                                        fontSize: 17,
-                                                        fontFamily: 'Gilroy',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        color: Color.fromRGBO(
-                                                            255, 255, 255, 1),
-                                                      ),
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                              Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: <Widget>[
-                                                  Text(
-                                                    'Card Holder Name',
-                                                    style: TextStyle(
-                                                      fontSize: 12,
-                                                      fontFamily: 'Gilroy',
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      color: Color.fromRGBO(
-                                                          218, 218, 218, 1),
-                                                    ),
-                                                  ),
-                                                  Padding(
-                                                    padding: const EdgeInsets
-                                                        .fromLTRB(0, 5, 0, 5),
-                                                    child: Text(
-                                                      'Precious I Ogar',
-                                                      style: TextStyle(
-                                                        fontSize: 17,
-                                                        fontFamily: 'Gilroy',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        color: Color.fromRGBO(
-                                                            255, 255, 255, 1),
-                                                      ),
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.topRight,
-                                child: Container(
-                                  width: 30,
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(15),
-                                    ),
-                                    color: Color.fromRGBO(203, 238, 234, 1),
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      Icons.edit,
-                                      color: Color.fromRGBO(230, 78, 0, 1),
-                                    ),
-                                  ),
-                                ),
-                              ),
                             ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(0, 15, 0, 15),
-                            child: Text(
-                              'Add new Card',
-                              style: TextStyle(
-                                color: Color.fromRGBO(230, 78, 0, 1),
-                                fontSize: 15,
-                                fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                            child: Container(
-                              width: (MediaQuery.of(context).size.width * 0.9) -
-                                  40,
-                              child: Separator(
-                                color: Color.fromRGBO(200, 200, 200, 1),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(3, 10, 0, 10),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                'Pay with Bank',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Gilroy',
-                                  fontWeight: FontWeight.w600,
-                                  color: Color.fromRGBO(153, 153, 153, 1),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(3, 10, 0, 10),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                'Use the bank account provided below to pay for your loan.',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'Gilroy',
-                                  fontWeight: FontWeight.w600,
-                                  color: Color.fromRGBO(69, 69, 69, 1),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 5, 0, 75),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 120,
-                              child: Card(
-                                elevation: 0,
-                                color: Color.fromRGBO(250, 242, 255, 1),
-                                child: Center(
-                                  child: Padding(
-                                    padding:
-                                        const EdgeInsets.fromLTRB(15, 1, 15, 1),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Container(
-                                          height: 70,
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceBetween,
-                                            children: <Widget>[
-                                              Padding(
-                                                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                                                child: Text(
-                                                  'Account Details',
-                                                  style: TextStyle(
-                                                    fontSize: 11.5,
-                                                    fontFamily: 'Gilroy',
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Color.fromRGBO(
-                                                        94, 94, 94, 1),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.fromLTRB(0, 2, 0, 1),
-                                                child: Text(
-                                                  'PROVIDUS BANK',
-                                                  style: TextStyle(
-                                                    fontSize: 13,
-                                                    fontFamily: 'Gilroy',
-                                                    fontWeight: FontWeight.w900,
-                                                    color: Color.fromRGBO(
-                                                        69, 69, 69, 1),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.fromLTRB(0, 2, 0, 0),
-                                                child: Text(
-                                                  '0254507664',
-                                                  style: TextStyle(
-                                                    fontSize: 15,
-                                                    letterSpacing: 2,
-                                                    fontFamily: 'Gilroy',
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Color.fromRGBO(
-                                                        69, 69, 69, 1),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Clipboard.setData(
-                                              ClipboardData(
-                                                text: '0254507664',
-                                              ),
-                                            );
-                                          },
-                                          child: Text(
-                                            'Copy Acc. Number',
-                                            style: TextStyle(
-                                              fontSize: 16,
-                                              fontFamily: 'Gilroy',
-                                              fontWeight: FontWeight.w600,
-                                              color:
-                                                  Color.fromRGBO(230, 78, 0, 1),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-          ),
+              ),
+            );
+          },
         );
       },
     );
@@ -724,7 +772,7 @@ class _LoanState extends State<Loan> {
                         width: 250,
                         height: 50,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(203, 238, 234, 0.4),
+                          color: Color.fromRGBO(203, 238, 234, 0.3),
                           borderRadius: BorderRadius.circular(25),
                         ),
                         child: Row(
@@ -741,9 +789,9 @@ class _LoanState extends State<Loan> {
                             Text(
                               'Pay for Loan',
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 15,
                                 fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 color: Color.fromRGBO(70, 70, 70, 1),
                               ),
                             )
@@ -833,7 +881,7 @@ class _LoanState extends State<Loan> {
                                       child: Text(
                                         'Started GreenLife Loans',
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontFamily: 'Gilroy',
                                           fontWeight: FontWeight.w600,
                                           color:
@@ -848,7 +896,7 @@ class _LoanState extends State<Loan> {
                                         style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Gilroy',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           color:
                                               Color.fromRGBO(150, 132, 130, 1),
                                         ),
@@ -861,7 +909,7 @@ class _LoanState extends State<Loan> {
                             Text(
                               'N120,000',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(13, 190, 83, 1),
@@ -913,7 +961,7 @@ class _LoanState extends State<Loan> {
                                       child: Text(
                                         'Partial Loan Payment',
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontFamily: 'Gilroy',
                                           fontWeight: FontWeight.w600,
                                           color:
@@ -928,7 +976,7 @@ class _LoanState extends State<Loan> {
                                         style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Gilroy',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           color:
                                               Color.fromRGBO(150, 132, 130, 1),
                                         ),
@@ -941,7 +989,7 @@ class _LoanState extends State<Loan> {
                             Text(
                               'N27,000',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(230, 78, 0, 1),
@@ -991,9 +1039,9 @@ class _LoanState extends State<Loan> {
                                     Padding(
                                       padding: const EdgeInsets.all(3.0),
                                       child: Text(
-                                        'Loan credit from Admin',
+                                        'Started GreenLife Loans',
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontFamily: 'Gilroy',
                                           fontWeight: FontWeight.w600,
                                           color:
@@ -1008,7 +1056,7 @@ class _LoanState extends State<Loan> {
                                         style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Gilroy',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           color:
                                               Color.fromRGBO(150, 132, 130, 1),
                                         ),
@@ -1021,7 +1069,7 @@ class _LoanState extends State<Loan> {
                             Text(
                               'N120,000',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(13, 190, 83, 1),
@@ -1073,7 +1121,7 @@ class _LoanState extends State<Loan> {
                                       child: Text(
                                         'Partial Loan Payment',
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontFamily: 'Gilroy',
                                           fontWeight: FontWeight.w600,
                                           color:
@@ -1088,7 +1136,7 @@ class _LoanState extends State<Loan> {
                                         style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Gilroy',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           color:
                                               Color.fromRGBO(150, 132, 130, 1),
                                         ),
@@ -1101,7 +1149,7 @@ class _LoanState extends State<Loan> {
                             Text(
                               'N27,000',
                               style: TextStyle(
-                                fontSize: 21,
+                                fontSize: 17,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(230, 78, 0, 1),
@@ -1151,9 +1199,9 @@ class _LoanState extends State<Loan> {
                                     Padding(
                                       padding: const EdgeInsets.all(3.0),
                                       child: Text(
-                                        'Loan credit from Admin',
+                                        'Started GreenLife Loans',
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontFamily: 'Gilroy',
                                           fontWeight: FontWeight.w600,
                                           color:
@@ -1168,7 +1216,7 @@ class _LoanState extends State<Loan> {
                                         style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Gilroy',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           color:
                                               Color.fromRGBO(150, 132, 130, 1),
                                         ),
@@ -1181,7 +1229,7 @@ class _LoanState extends State<Loan> {
                             Text(
                               'N120,000',
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 17,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(13, 190, 83, 1),
@@ -1233,7 +1281,7 @@ class _LoanState extends State<Loan> {
                                       child: Text(
                                         'Partial Loan Payment',
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontFamily: 'Gilroy',
                                           fontWeight: FontWeight.w600,
                                           color:
@@ -1248,7 +1296,7 @@ class _LoanState extends State<Loan> {
                                         style: TextStyle(
                                           fontSize: 13,
                                           fontFamily: 'Gilroy',
-                                          fontWeight: FontWeight.w600,
+                                          fontWeight: FontWeight.w500,
                                           color:
                                               Color.fromRGBO(150, 132, 130, 1),
                                         ),
@@ -1261,7 +1309,7 @@ class _LoanState extends State<Loan> {
                             Text(
                               'N27,000',
                               style: TextStyle(
-                                fontSize: 21,
+                                fontSize: 17,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(230, 78, 0, 1),

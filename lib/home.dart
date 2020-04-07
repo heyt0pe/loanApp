@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:loan/notifications.dart';
 import 'package:loan/loan-info.dart';
 import 'package:loan/withdraw.dart';
+import 'package:loan/main.dart';
 import 'package:loan/new-loan-one.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -80,34 +81,37 @@ class _HomeState extends State<Home> {
                     new Icon(
                       Icons.notifications,
                       color: Color.fromRGBO(93, 93, 93, 1),
-                      size: 40,
+                      size: 35,
                     ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          padding: EdgeInsets.all(3),
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(230, 78, 0, 1),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(17),
+                    Transform.translate(
+                      offset: Offset(-0, -3),
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(230, 78, 0, 1),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(17),
+                              ),
                             ),
-                          ),
-                          constraints: BoxConstraints(
-                            minWidth: 20,
-                            minHeight: 17,
-                          ),
-                          child: Text(
-                            '1',
-                            style: new TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
+                            constraints: BoxConstraints(
+                              minWidth: 20,
+                              minHeight: 17,
                             ),
-                            textAlign: TextAlign.center,
+                            child: Text(
+                              '1',
+                              style: new TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Gilroy',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                       ),
@@ -309,7 +313,7 @@ class _HomeState extends State<Home> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontFamily: 'Gilroy',
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
                                         color: Color.fromRGBO(77, 77, 77, 1),
                                       ),
                                     ),
@@ -344,7 +348,7 @@ class _HomeState extends State<Home> {
                                       style: TextStyle(
                                         fontSize: 16,
                                         fontFamily: 'Gilroy',
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
                                         color: Color.fromRGBO(77, 77, 77, 1),
                                       ),
                                     ),
@@ -412,7 +416,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Wallet Top-up',
                                           style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -427,7 +431,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -438,9 +442,9 @@ class _HomeState extends State<Home> {
                                 ],
                               ),
                               Text(
-                                'N120,000,000',
+                                'N120,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -493,7 +497,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -508,7 +512,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -521,7 +525,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -574,7 +578,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Wallet Top-up',
                                           style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -589,7 +593,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -600,9 +604,9 @@ class _HomeState extends State<Home> {
                                 ],
                               ),
                               Text(
-                                'N120,000,000',
+                                'N120,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -655,7 +659,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -670,7 +674,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -683,7 +687,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -734,34 +738,37 @@ class _HomeState extends State<Home> {
                     new Icon(
                       Icons.notifications,
                       color: Color.fromRGBO(93, 93, 93, 1),
-                      size: 40,
+                      size: 35,
                     ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          padding: EdgeInsets.all(3),
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(230, 78, 0, 1),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(17),
+                    Transform.translate(
+                      offset: Offset(-0, -3),
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(230, 78, 0, 1),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(17),
+                              ),
                             ),
-                          ),
-                          constraints: BoxConstraints(
-                            minWidth: 20,
-                            minHeight: 17,
-                          ),
-                          child: Text(
-                            '1',
-                            style: new TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
+                            constraints: BoxConstraints(
+                              minWidth: 20,
+                              minHeight: 17,
                             ),
-                            textAlign: TextAlign.center,
+                            child: Text(
+                              '1',
+                              style: new TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Gilroy',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                       ),
@@ -790,7 +797,7 @@ class _HomeState extends State<Home> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(20, 0, 5, 0),
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.6,
+                                width: MediaQuery.of(context).size.width * 0.65,
                                 height: 115,
                                 child: Card(
                                   color: Color.fromRGBO(52, 198, 53, 1),
@@ -846,7 +853,7 @@ class _HomeState extends State<Home> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.6,
+                                width: MediaQuery.of(context).size.width * 0.65,
                                 height: 115,
                                 child: Card(
                                   color: Color.fromRGBO(0, 122, 255, 1),
@@ -902,7 +909,7 @@ class _HomeState extends State<Home> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(5, 0, 20, 0),
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.6,
+                                width: MediaQuery.of(context).size.width * 0.65,
                                 height: 115,
                                 child: Card(
                                   color: Color.fromRGBO(255, 53, 75, 1),
@@ -1090,7 +1097,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color:
                                                 Color.fromRGBO(230, 78, 0, 1),
                                           ),
@@ -1136,9 +1143,9 @@ class _HomeState extends State<Home> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   Container(
-                                    width:
-                                        (MediaQuery.of(context).size.width - 50) *
-                                            0.14,
+                                    width: (MediaQuery.of(context).size.width -
+                                            50) *
+                                        0.14,
                                     child: Text(
                                       '2.',
                                       style: TextStyle(
@@ -1150,9 +1157,9 @@ class _HomeState extends State<Home> {
                                     ),
                                   ),
                                   Container(
-                                    width:
-                                        (MediaQuery.of(context).size.width - 50) *
-                                            0.43,
+                                    width: (MediaQuery.of(context).size.width -
+                                            50) *
+                                        0.43,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -1163,7 +1170,8 @@ class _HomeState extends State<Home> {
                                             fontSize: 16,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
-                                            color: Color.fromRGBO(57, 24, 79, 1),
+                                            color:
+                                                Color.fromRGBO(57, 24, 79, 1),
                                           ),
                                         ),
                                         Text(
@@ -1171,17 +1179,18 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
-                                            color: Color.fromRGBO(230, 78, 0, 1),
+                                            fontWeight: FontWeight.w500,
+                                            color:
+                                                Color.fromRGBO(230, 78, 0, 1),
                                           ),
                                         ),
                                       ],
                                     ),
                                   ),
                                   Container(
-                                    width:
-                                        (MediaQuery.of(context).size.width - 50) *
-                                            0.43,
+                                    width: (MediaQuery.of(context).size.width -
+                                            50) *
+                                        0.43,
                                     child: Text(
                                       'N60,000',
                                       style: TextStyle(
@@ -1253,7 +1262,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Started GreenLife Loans',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1268,7 +1277,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1281,7 +1290,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N120,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -1334,7 +1343,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1349,7 +1358,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1362,7 +1371,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -1413,9 +1422,9 @@ class _HomeState extends State<Home> {
                                       Padding(
                                         padding: const EdgeInsets.all(3.0),
                                         child: Text(
-                                          'Loan credit from Admin',
+                                          'Started GreenLife Loans',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1430,7 +1439,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1443,7 +1452,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N120,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -1496,7 +1505,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1511,7 +1520,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1524,7 +1533,169 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
+                                  fontFamily: 'Gilroy',
+                                  fontWeight: FontWeight.w600,
+                                  color: Color.fromRGBO(230, 78, 0, 1),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 5, 15, 5),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 70,
+                      child: Card(
+                        elevation: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(3.0),
+                                    child: Container(
+                                      width: 40,
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(203, 238, 234, 1),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.call_received,
+                                          color: Color.fromRGBO(13, 190, 83, 1),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Text(
+                                          'Started GreenLife Loans',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: FontWeight.w600,
+                                            color:
+                                                Color.fromRGBO(105, 79, 122, 1),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Text(
+                                          '28, Jan 2020',
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromRGBO(
+                                                150, 132, 130, 1),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                'N120,000',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontFamily: 'Gilroy',
+                                  fontWeight: FontWeight.w600,
+                                  color: Color.fromRGBO(13, 190, 83, 1),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 5, 15, 5),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 70,
+                      child: Card(
+                        elevation: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(3.0),
+                                    child: Container(
+                                      width: 40,
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        color: Color.fromRGBO(255, 207, 207, 1),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Center(
+                                        child: Icon(
+                                          Icons.call_made,
+                                          color: Color.fromRGBO(230, 78, 0, 1),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Text(
+                                          'Partial Loan Payment',
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: FontWeight.w600,
+                                            color:
+                                                Color.fromRGBO(105, 79, 122, 1),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(3.0),
+                                        child: Text(
+                                          '28, Jan 2020',
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            fontFamily: 'Gilroy',
+                                            fontWeight: FontWeight.w500,
+                                            color: Color.fromRGBO(
+                                                150, 132, 130, 1),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                'N27,000',
+                                style: TextStyle(
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -1591,34 +1762,37 @@ class _HomeState extends State<Home> {
                     new Icon(
                       Icons.notifications,
                       color: Color.fromRGBO(93, 93, 93, 1),
-                      size: 40,
+                      size: 35,
                     ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          padding: EdgeInsets.all(3),
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(230, 78, 0, 1),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(17),
+                    Transform.translate(
+                      offset: Offset(-0, -3),
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(230, 78, 0, 1),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(17),
+                              ),
                             ),
-                          ),
-                          constraints: BoxConstraints(
-                            minWidth: 20,
-                            minHeight: 17,
-                          ),
-                          child: Text(
-                            '1',
-                            style: new TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14,
+                            constraints: BoxConstraints(
+                              minWidth: 20,
+                              minHeight: 17,
                             ),
-                            textAlign: TextAlign.center,
+                            child: Text(
+                              '1',
+                              style: new TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'Gilroy',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
                         ),
                       ),
@@ -1654,9 +1828,9 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 4, 0, 4),
+                            padding: const EdgeInsets.fromLTRB(0, 4, 0, 7),
                             child: Text(
-                              'N120,000',
+                              'N20,900,000',
                               style: TextStyle(
                                 fontSize: 35,
                                 fontFamily: 'Gilroy',
@@ -1666,7 +1840,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -1791,7 +1965,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Started GreenLife Loans',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1806,7 +1980,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1819,7 +1993,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N120,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -1872,7 +2046,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1887,7 +2061,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1900,7 +2074,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -1951,9 +2125,9 @@ class _HomeState extends State<Home> {
                                       Padding(
                                         padding: const EdgeInsets.all(3.0),
                                         child: Text(
-                                          'Loan credit from Admin',
+                                          'Started GreenLife Loans',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -1968,7 +2142,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -1981,7 +2155,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N120,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -2034,7 +2208,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -2049,7 +2223,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -2062,7 +2236,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -2113,9 +2287,9 @@ class _HomeState extends State<Home> {
                                       Padding(
                                         padding: const EdgeInsets.all(3.0),
                                         child: Text(
-                                          'Loan credit from Admin',
+                                          'Started GreenLife Loans',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -2130,7 +2304,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -2143,7 +2317,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N120,000',
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(13, 190, 83, 1),
@@ -2196,7 +2370,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           'Partial Loan Payment',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w600,
                                             color:
@@ -2211,7 +2385,7 @@ class _HomeState extends State<Home> {
                                           style: TextStyle(
                                             fontSize: 13,
                                             fontFamily: 'Gilroy',
-                                            fontWeight: FontWeight.w600,
+                                            fontWeight: FontWeight.w500,
                                             color: Color.fromRGBO(
                                                 150, 132, 130, 1),
                                           ),
@@ -2224,7 +2398,7 @@ class _HomeState extends State<Home> {
                               Text(
                                 'N27,000',
                                 style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 17,
                                   fontFamily: 'Gilroy',
                                   fontWeight: FontWeight.w600,
                                   color: Color.fromRGBO(230, 78, 0, 1),
@@ -2312,7 +2486,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2341,7 +2515,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2370,7 +2544,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2416,7 +2590,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2453,7 +2627,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2482,7 +2656,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2511,7 +2685,7 @@ class _HomeState extends State<Home> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(61, 61, 61, 1),
                             ),
                           ),
@@ -2530,30 +2704,40 @@ class _HomeState extends State<Home> {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Container(
-                      height: 56,
-                      child: Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
-                            child: Transform.rotate(
-                              angle: 3.15,
-                              child: Icon(
-                                Icons.exit_to_app,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MyApp(),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        height: 56,
+                        child: Row(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
+                              child: Transform.rotate(
+                                angle: 3.15,
+                                child: Icon(
+                                  Icons.exit_to_app,
+                                  color: Color.fromRGBO(230, 78, 0, 1),
+                                ),
+                              ),
+                            ),
+                            Text(
+                              'Log out',
+                              style: TextStyle(
+                                fontSize: 19,
+                                fontFamily: 'Gilroy',
+                                fontWeight: FontWeight.w600,
                                 color: Color.fromRGBO(230, 78, 0, 1),
                               ),
                             ),
-                          ),
-                          Text(
-                            'Log out',
-                            style: TextStyle(
-                              fontSize: 19,
-                              fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
-                              color: Color.fromRGBO(230, 78, 0, 1),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -2582,7 +2766,6 @@ class _HomeState extends State<Home> {
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         selectedItemColor: Color.fromRGBO(230, 78, 0, 1),
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
         onTap: (index) {
           setState(() {
             currentIndex = index;

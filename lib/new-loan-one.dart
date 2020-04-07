@@ -11,6 +11,8 @@ class NewLoan extends StatefulWidget {
 class _NewLoanState extends State<NewLoan> {
   TextEditingController paymentDate = new TextEditingController();
 
+  bool installment = true;
+
   List<String> reasons = [
     'Business',
     'Test',
@@ -72,7 +74,7 @@ class _NewLoanState extends State<NewLoan> {
                           Text(
                             'You have a credit limit of ₦120,000',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.w600,
                               color: Color.fromRGBO(2, 132, 254, 1),
                             ),
@@ -89,9 +91,10 @@ class _NewLoanState extends State<NewLoan> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
                   child: Text(
-                    'Please fill in the field with the appropraite details',
+                    'Please fill in the field with the appropriate details',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
+                      fontFamily: 'Gilroy',
                       fontWeight: FontWeight.w600,
                       color: Color.fromRGBO(123, 123, 123, 1),
                     ),
@@ -107,7 +110,7 @@ class _NewLoanState extends State<NewLoan> {
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Color.fromRGBO(128, 128, 128, 1),
                       ),
                       decoration: const InputDecoration(
@@ -146,7 +149,7 @@ class _NewLoanState extends State<NewLoan> {
                           style: TextStyle(
                             fontSize: 16,
                             fontFamily: 'Gilroy',
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             color: Color.fromRGBO(128, 128, 128, 1),
                           ),
                           decoration: const InputDecoration(
@@ -245,25 +248,34 @@ class _NewLoanState extends State<NewLoan> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 45),
-                  child: Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.check_box,
-                        color: Color.fromRGBO(57, 24, 79, 1),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                        child: Text(
-                          'Payment by Installment',
-                          style: TextStyle(
-                            fontFamily: 'Gilroy',
-                            fontWeight: FontWeight.normal,
-                            fontSize: 15.0,
-                            color: Color.fromRGBO(121, 121, 121, 1),
-                          ),
+                  child: GestureDetector(
+                    onTap: (){
+                      setState(() {
+                        installment = !installment;
+                      });
+                    },
+                    child: Row(
+                      children: <Widget>[
+                        Icon(
+                          (installment)
+                              ? Icons.check_box
+                              : Icons.check_box_outline_blank,
+                          color: Color.fromRGBO(57, 24, 79, 1),
                         ),
-                      )
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                          child: Text(
+                            'Payment by Installment',
+                            style: TextStyle(
+                              fontFamily: 'Gilroy',
+                              fontWeight: FontWeight.normal,
+                              fontSize: 15.0,
+                              color: Color.fromRGBO(121, 121, 121, 1),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Padding(

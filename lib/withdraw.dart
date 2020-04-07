@@ -60,23 +60,23 @@ class _WithdrawState extends State<Withdraw> {
     super.initState();
     one.addListener(() {
       if (one.text.length > 0) {
-        twoFocus.requestFocus();
+        FocusScope.of(context).nextFocus();
       }
     });
     two.addListener(() {
       if (two.text.length > 0) {
-        threeFocus.requestFocus();
+        FocusScope.of(context).nextFocus();
       }
     });
     three.addListener(() {
       if (three.text.length > 0) {
-        fourFocus.requestFocus();
+        FocusScope.of(context).nextFocus();
       }
     });
 
     four.addListener(() {
       if (four.text.length > 0) {
-        four.text = four.text.substring(0, 1);
+        FocusScope.of(context).nextFocus();
       }
     });
 
@@ -131,7 +131,7 @@ class _WithdrawState extends State<Withdraw> {
                                 fontSize: 15,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(150, 150, 150, 1)),
+                                color: Color.fromRGBO(170, 170, 170, 1)),
                           ),
                         ),
                         Padding(
@@ -217,7 +217,7 @@ class _WithdrawState extends State<Withdraw> {
                                 fontSize: 15,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(150, 150, 150, 1)),
+                                color: Color.fromRGBO(170, 170, 170, 1)),
                           ),
                         ),
                         Padding(
@@ -232,7 +232,6 @@ class _WithdrawState extends State<Withdraw> {
                                   child: TextFormField(
                                     obscureText: true,
                                     controller: one,
-                                    focusNode: oneFocus,
                                     textAlign: TextAlign.center,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
@@ -240,7 +239,6 @@ class _WithdrawState extends State<Withdraw> {
                                         borderSide:
                                             BorderSide(color: Colors.white),
                                       ),
-                                      focusColor: Colors.white,
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
@@ -263,14 +261,12 @@ class _WithdrawState extends State<Withdraw> {
                                     obscureText: true,
                                     textAlign: TextAlign.center,
                                     controller: two,
-                                    focusNode: twoFocus,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
                                       ),
-                                      focusColor: Colors.white,
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
@@ -293,14 +289,12 @@ class _WithdrawState extends State<Withdraw> {
                                     obscureText: true,
                                     controller: three,
                                     textAlign: TextAlign.center,
-                                    focusNode: threeFocus,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
                                       ),
-                                      focusColor: Colors.white,
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
@@ -323,14 +317,12 @@ class _WithdrawState extends State<Withdraw> {
                                     obscureText: true,
                                     controller: four,
                                     textAlign: TextAlign.center,
-                                    focusNode: fourFocus,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
                                       ),
-                                      focusColor: Colors.white,
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide:
                                             BorderSide(color: Colors.white),
@@ -557,10 +549,14 @@ class _WithdrawState extends State<Withdraw> {
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Color.fromRGBO(128, 128, 128, 1),
                       ),
                       decoration: const InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.account_balance,
+                          color: Colors.transparent,
+                        ),
                         border: OutlineInputBorder(),
                         labelText: 'Accout Number',
                         labelStyle: TextStyle(

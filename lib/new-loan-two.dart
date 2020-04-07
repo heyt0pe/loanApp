@@ -55,7 +55,7 @@ class _NewLoanContdState extends State<NewLoanContd> {
                             style: TextStyle(
                               fontSize: 15,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Colors.white,
                             ),
                           ),
@@ -144,7 +144,8 @@ class _NewLoanContdState extends State<NewLoanContd> {
                   child: Text(
                     'In order to continue the request, kindly put in the correct details of your next of kin.',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
+                      fontFamily: 'Gilroy',
                       fontWeight: FontWeight.w600,
                       color: Color.fromRGBO(123, 123, 123, 1),
                     ),
@@ -160,7 +161,7 @@ class _NewLoanContdState extends State<NewLoanContd> {
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Color.fromRGBO(128, 128, 128, 1),
                       ),
                       decoration: const InputDecoration(
@@ -186,7 +187,7 @@ class _NewLoanContdState extends State<NewLoanContd> {
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Color.fromRGBO(128, 128, 128, 1),
                       ),
                       decoration: const InputDecoration(
@@ -268,7 +269,7 @@ class _NewLoanContdState extends State<NewLoanContd> {
                             style: TextStyle(
                               fontSize: 16,
                               fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w500,
                               color: Color.fromRGBO(128, 128, 128, 1),
                             ),
                           ),
@@ -287,7 +288,7 @@ class _NewLoanContdState extends State<NewLoanContd> {
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Color.fromRGBO(128, 128, 128, 1),
                       ),
                       decoration: const InputDecoration(
@@ -313,7 +314,7 @@ class _NewLoanContdState extends State<NewLoanContd> {
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Color.fromRGBO(128, 128, 128, 1),
                       ),
                       decoration: const InputDecoration(

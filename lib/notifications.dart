@@ -72,14 +72,14 @@ class _NotificationsState extends State<Notifications> {
                               'Your loan request was successful!',
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w900,
+                                fontWeight: FontWeight.w700,
                                 color: Color.fromRGBO(0, 0, 0, 1),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 5, 0, 5),
+                              padding: const EdgeInsets.fromLTRB(0, 5, 0, 10),
                               child: Row(
                                 children: <Widget>[
                                   Flexible(
@@ -88,7 +88,7 @@ class _NotificationsState extends State<Notifications> {
                                           text:
                                               'Your account has been credited with ',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontFamily: 'Gilroy',
                                             fontWeight: FontWeight.w500,
                                             color:
@@ -99,9 +99,9 @@ class _NotificationsState extends State<Notifications> {
                                               text:
                                                   'N40,000',
                                               style: TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 14,
                                                 fontFamily: 'Gilroy',
-                                                fontWeight: FontWeight.w900,
+                                                fontWeight: FontWeight.w600,
                                                 color: Color.fromRGBO(
                                                     126, 126, 126, 1),
                                               ),
@@ -116,7 +116,7 @@ class _NotificationsState extends State<Notifications> {
                               'Yesterday',
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 13,
                                 fontFamily: 'Gilroy',
                                 fontWeight: FontWeight.w500,
                                 color: Color.fromRGBO(126, 126, 126, 0.5),
