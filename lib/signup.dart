@@ -211,7 +211,7 @@ class _SignUpState extends State<SignUp> {
                           width: MediaQuery.of(context).size.width,
                           height: 60,
                           child: TextFormField(
-                            keyboardType: TextInputType.visiblePassword,
+                            keyboardType: TextInputType.text,
                             obscureText: true,
                             style: TextStyle(
                               fontSize: 16,
@@ -238,7 +238,7 @@ class _SignUpState extends State<SignUp> {
                           width: MediaQuery.of(context).size.width,
                           height: 60,
                           child: TextFormField(
-                            keyboardType: TextInputType.visiblePassword,
+                            keyboardType: TextInputType.text,
                             obscureText: true,
                             style: TextStyle(
                               fontSize: 16,

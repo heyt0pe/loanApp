@@ -141,7 +141,7 @@ class _SignInState extends State<SignIn> {
                           width: MediaQuery.of(context).size.width,
                           height: 60,
                           child: TextFormField(
-                            keyboardType: TextInputType.visiblePassword,
+                            keyboardType: TextInputType.text,
                             obscureText: passwordText,
                             style: TextStyle(
                               fontSize: 16,

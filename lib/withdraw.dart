@@ -51,22 +51,27 @@ class _WithdrawState extends State<Withdraw> {
   TextEditingController two = new TextEditingController();
   TextEditingController three = new TextEditingController();
   TextEditingController four = new TextEditingController();
+  FocusNode oneFocus = new FocusNode();
+  FocusNode twoFocus = new FocusNode();
+  FocusNode threeFocus = new FocusNode();
+  FocusNode fourFocus = new FocusNode();
+  
 
   void initState() {
     super.initState();
     one.addListener(() {
       if (one.text.length > 0) {
-        FocusScope.of(context).nextFocus();
+	  twoFocus.requestFocus();
       }
     });
     two.addListener(() {
       if (two.text.length > 0) {
-        FocusScope.of(context).nextFocus();
+	  threeFocus.requestFocus();
       }
     });
     three.addListener(() {
       if (three.text.length > 0) {
-        FocusScope.of(context).nextFocus();
+	  fourFocus.requestFocus();
       }
     });
 
@@ -228,6 +233,7 @@ class _WithdrawState extends State<Withdraw> {
                                   child: TextFormField(
                                     obscureText: true,
                                     controller: one,
+									focusNode: oneFocus,
                                     textAlign: TextAlign.center,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
@@ -257,6 +263,7 @@ class _WithdrawState extends State<Withdraw> {
                                     obscureText: true,
                                     textAlign: TextAlign.center,
                                     controller: two,
+									focusNode: twoFocus,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
                                       enabledBorder: UnderlineInputBorder(
@@ -284,6 +291,7 @@ class _WithdrawState extends State<Withdraw> {
                                   child: TextFormField(
                                     obscureText: true,
                                     controller: three,
+									focusNode: threeFocus,
                                     textAlign: TextAlign.center,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
@@ -312,6 +320,7 @@ class _WithdrawState extends State<Withdraw> {
                                   child: TextFormField(
                                     obscureText: true,
                                     controller: four,
+									focusNode: fourFocus,
                                     textAlign: TextAlign.center,
                                     keyboardType: TextInputType.number,
                                     decoration: InputDecoration(
