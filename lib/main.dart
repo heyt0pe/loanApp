@@ -124,7 +124,6 @@ class _HomeState extends State<Home> {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -143,10 +142,16 @@ class _HomeState extends State<Home> {
                                 AnimatedContainer(
                                   duration: Duration(milliseconds: 250),
                                   height: height1,
-                                  width: MediaQuery.of(pageContext).size.height * 0.75,
-                                  child: Image.asset(
-                                    'assets/images/1.png',
-                                    fit: BoxFit.contain,
+                                  width:
+                                      MediaQuery.of(pageContext).size.height *
+                                          0.75,
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                    child: Image.asset(
+                                      'assets/images/1.png',
+                                      fit: BoxFit.fill,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -159,10 +164,16 @@ class _HomeState extends State<Home> {
                                 AnimatedContainer(
                                   duration: Duration(milliseconds: 250),
                                   height: height2,
-                                  width: MediaQuery.of(pageContext).size.height * 0.75,
-                                  child: Image.asset(
-                                    'assets/images/2.png',
-                                    fit: BoxFit.contain,
+                                  width:
+                                      MediaQuery.of(pageContext).size.height *
+                                          0.75,
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                    child: Image.asset(
+                                      'assets/images/2.png',
+                                      fit: BoxFit.fill,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -175,10 +186,15 @@ class _HomeState extends State<Home> {
                             AnimatedContainer(
                               duration: Duration(milliseconds: 250),
                               height: height3,
-                              width: MediaQuery.of(pageContext).size.height * 0.75,
-                              child: Image.asset(
-                                'assets/images/3.png',
-                                fit: BoxFit.contain,
+                              width:
+                                  MediaQuery.of(pageContext).size.height * 0.75,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                child: Image.asset(
+                                  'assets/images/3.png',
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                             ),
                           ],
