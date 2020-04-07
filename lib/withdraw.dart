@@ -51,10 +51,6 @@ class _WithdrawState extends State<Withdraw> {
   TextEditingController two = new TextEditingController();
   TextEditingController three = new TextEditingController();
   TextEditingController four = new TextEditingController();
-  FocusNode oneFocus = new FocusNode();
-  FocusNode twoFocus = new FocusNode();
-  FocusNode threeFocus = new FocusNode();
-  FocusNode fourFocus = new FocusNode();
 
   void initState() {
     super.initState();
@@ -76,7 +72,7 @@ class _WithdrawState extends State<Withdraw> {
 
     four.addListener(() {
       if (four.text.length > 0) {
-        FocusScope.of(context).nextFocus();
+        FocusScope.of(context).unfocus();
       }
     });
 
