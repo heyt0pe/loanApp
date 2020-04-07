@@ -99,7 +99,7 @@ class _HomeState extends State<Home> {
       infinityPageController.animateToPage(
         index + 1,
         duration: Duration(milliseconds: 300),
-        curve: Curves.easeIn,
+        curve: Curves.ease,
       );
     } catch (e) {}
   }
@@ -117,6 +117,7 @@ class _HomeState extends State<Home> {
     getContext(context);
 
     return Scaffold(
+	  backgroundColor: Colors.white,
       body: Container(
         margin: MediaQuery.of(context).padding,
         color: Colors.white,
