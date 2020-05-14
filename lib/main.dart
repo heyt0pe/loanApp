@@ -98,7 +98,7 @@ class _HomeState extends State<Home> {
     try {
       infinityPageController.animateToPage(
         index + 1,
-        duration: Duration(milliseconds: 300),
+        duration: Duration(milliseconds: 500),
         curve: Curves.ease,
       );
     } catch (e) {}
